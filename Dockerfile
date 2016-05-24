@@ -8,7 +8,7 @@ ENV DOCKER_HOST unix:///var/run/docker.sock
 
 USER root
 
-RUN curl -fSL "https://${DOCKER_BUCKET}/builds/Linux/x86_64/docker-$DOCKER_VERSION" -o ${DOCKER_HOME} \
+RUN curl -fSL "https://${DOCKER_BUCKET}/builds/Linux/x86_64/docker-$DOCKER_VERSION.tgz" -o ${DOCKER_HOME} \
     && echo "${DOCKER_SHA256} ${DOCKER_HOME}" | sha256sum -c - \
     && chmod +x ${DOCKER_HOME}
 
