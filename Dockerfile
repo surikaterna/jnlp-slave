@@ -12,6 +12,6 @@ RUN curl -fSL "https://${DOCKER_BUCKET}/builds/Linux/x86_64/docker-$DOCKER_VERSI
     && echo "${DOCKER_SHA256} ${DOCKER_HOME}" | sha256sum -c - \
     && chmod +x ${DOCKER_HOME}
 
-RUN usermod -G docker jenkins
+#RUN usermod -G docker jenkins
 
 USER jenkins
