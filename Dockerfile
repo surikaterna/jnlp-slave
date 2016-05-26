@@ -14,8 +14,8 @@ RUN set -x \
 	&& rmdir docker \
 	&& rm docker.tgz \
 	&& docker -v \
-    && groupadd -g 999 docker
-    && gpasswd -a jenkins users
+    && groupadd -g 999 docker \
+    && gpasswd -a jenkins users \
     && gpasswd -a jenkins docker
 
 USER jenkins
