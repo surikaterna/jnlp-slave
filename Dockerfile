@@ -2,8 +2,6 @@ FROM jenkinsci/jnlp-slave
 
 USER root
 
-#RUN apk add --no-cache curl
-
 ENV DOCKER_BUCKET get.docker.com
 ENV DOCKER_VERSION 1.11.1
 ENV DOCKER_SHA256 893e3c6e89c0cd2c5f1e51ea41bc2dd97f5e791fcfa3cee28445df277836339d
@@ -15,10 +13,7 @@ RUN set -x \
 	&& mv docker/* /usr/local/bin/ \
 	&& rmdir docker \
 	&& rm docker.tgz \
-	&& docker -v
+	&& docker -v \
+    && gpasswd -a jenkins users
 
-#COPY docker-entrypoint.sh /usr/local/bin/
-#USER jenkins
-
-#ENTRYPOINT ["docker-entrypoint.sh"]
-#CMD ["sh"]
+USER jenkins
