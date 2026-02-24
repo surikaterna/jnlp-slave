@@ -2,10 +2,10 @@
 
 
 ```
-docker build -t surikaterna/jnlp-slave:8 .
+docker build -t surikaterna/jnlp-slave:9 .
 ```
 
 push to docker hub
 ```
-docker push surikaterna/jnlp-slave:8
+docker push surikaterna/jnlp-slave:9
 ```
